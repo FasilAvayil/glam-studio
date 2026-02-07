@@ -1,12 +1,23 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const Hero = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
     return (
-        <section id="home" className="relative h-screen w-full overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat">
-                <div className="absolute inset-0 bg-black/60 bg-gradient-to-t from-glam-dark via-transparent to-black/30" />
-            </div>
+        <section ref={ref} id="home" className="relative h-screen w-full overflow-hidden">
+            {/* Background Image with Parallax Overlay */}
+            <motion.div style={{ y }} className="absolute inset-0">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat transform scale-110">
+                    <div className="absolute inset-0 bg-black/60 bg-gradient-to-t from-glam-dark via-transparent to-black/30" />
+                </div>
+            </motion.div>
 
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 <motion.div

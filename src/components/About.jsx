@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Award, Users, Heart, Sparkles } from 'lucide-react';
+import { Users, Heart, Sparkles } from 'lucide-react';
 
 const About = () => {
     const stats = [
-        { icon: <Award className="text-glam-gold" />, label: 'Awards Won', value: '15+' },
         { icon: <Users className="text-glam-gold" />, label: 'Happy Clients', value: '2k+' },
         { icon: <Heart className="text-glam-gold" />, label: 'Years Exp', value: '10+' },
         { icon: <Sparkles className="text-glam-gold" />, label: 'Stylists', value: '12+' },
@@ -23,8 +22,8 @@ const About = () => {
                     >
                         <div className="aspect-[4/5] rounded-2xl overflow-hidden relative z-10 border border-white/10">
                             <img
-                                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2670&auto=format&fit=crop"
-                                alt="Salon Interior"
+                                src="https://images.unsplash.com/photo-1593526612327-0479f646e3cb?q=80&w=2670&auto=format&fit=crop"
+                                alt="Child getting a haircut"
                                 className="w-full h-full object-cover"
                             />
                         </div>

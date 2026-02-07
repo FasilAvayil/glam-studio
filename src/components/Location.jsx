@@ -39,8 +39,8 @@ const Location = () => {
                                         <MapPin className="text-glam-gold" size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold mb-1">Our Address</h4>
-                                        <p className="text-gray-400">123 Luxury Lane, Beverly Hills, CA 90210</p>
+                                        <h4 className="text-white font-bold mb-1">Our Address </h4>
+                                        <p className="text-gray-400">DERLAKKATTE, MANGALORE, KARNATAKA, INDIA</p>
                                     </div>
                                 </div>
 
@@ -50,7 +50,7 @@ const Location = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold mb-1">Phone Number</h4>
-                                        <p className="text-gray-400">+1 (555) 123-4567</p>
+                                        <p className="text-gray-400">+971 50 339 -6761</p>
                                     </div>
                                 </div>
 
@@ -69,7 +69,13 @@ const Location = () => {
 
                         <div className="mt-12 flex gap-4">
                             <button
-                                onClick={() => window.open('https://maps.google.com', '_blank')}
+                                // onClick={() => window.open('https://maps.google.com', '_blank')}
+                                onClick={() =>
+                                    window.open(
+                                        'https://www.google.com/maps/search/?api=1&query=Lagoon+Mall,+Derlakatte,+Mangalore,+Karnataka,+India',
+                                        '_blank'
+                                    )
+                                }
                                 className="flex-1 py-4 border border-glam-gold text-glam-gold font-bold tracking-widest hover:bg-glam-gold hover:text-black transition-all duration-300"
                             >
                                 GET DIRECTIONS

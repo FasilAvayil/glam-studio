@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import Location from './components/Location';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   const [selectedService, setSelectedService] = useState('');
@@ -21,18 +22,22 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-glam-dark selection:bg-glam-gold selection:text-black font-sans">
-      <Navbar />
-      <Hero />
-      <About />
-      <Services onBookNow={handleBookNow} />
-      <Gallery />
-      <Testimonials />
-      <Booking selectedService={selectedService} />
-      <Location />
-      <Footer />
-    </div>
+    <>
+      <div className="min-h-screen bg-glam-dark selection:bg-glam-gold selection:text-black font-sans">
+        <Navbar />
+        <Hero />
+        <About />
+        <Services onBookNow={handleBookNow} />
+        <Gallery />
+        <Testimonials />
+        <Booking selectedService={selectedService} />
+        <Location />
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 }
+
 
 export default App;
