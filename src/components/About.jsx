@@ -44,7 +44,7 @@ const About = () => {
                             Our Story
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4 mb-6 leading-tight">
-                            Crafting Beauty & Confidence <br /> Since 2014
+                            Crafting Beauty & Confidence
                         </h2>
                         <p className="text-gray-300 text-lg leading-relaxed mb-8">
                             At Glam Studio, we believe that beauty is a journey, not a destination. Our mission is to
