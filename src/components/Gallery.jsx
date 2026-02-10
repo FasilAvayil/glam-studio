@@ -12,11 +12,6 @@ const images = [
         category: 'Makeup'
     },
     {
-        url: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2670&auto=format&fit=crop',
-        title: 'Deep Relaxation',
-        category: 'Spa'
-    },
-    {
         url: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=2570&auto=format&fit=crop',
         title: 'Artistic Nails',
         category: 'Nails'

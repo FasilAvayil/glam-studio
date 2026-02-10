@@ -4,12 +4,40 @@ import { Calendar, Clock, User, Phone, Scissors, MessageSquare } from 'lucide-re
 
 const Booking = ({ selectedService }) => {
     const [service, setService] = useState('');
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+    const [request, setRequest] = useState("");
+
 
     useEffect(() => {
         if (selectedService) {
             setService(selectedService);
         }
     }, [selectedService]);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const whatsappNumber = "9567848426"; // ← salon WhatsApp number (no +)
+
+        const message = `
+*New Booking Request* ✨
+ Name: ${name}
+ Phone: ${phone}
+ Service: ${service}
+ Date: ${date}
+ Time: ${time}
+ Request: ${request || "None"}
+  `;
+
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(url, "_blank");
+
+    };
+
+
 
     return (
         <section id="booking" className="py-20 relative bg-black">
@@ -38,13 +66,14 @@ const Booking = ({ selectedService }) => {
                         </p>
                     </motion.div>
 
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm uppercase tracking-wider text-gray-400 flex items-center gap-2">
                                     <User size={16} className="text-glam-gold" /> Name
                                 </label>
                                 <input
+                                    value={name} onChange={(e) => setName(e.target.value)}
                                     type="text"
                                     className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:border-glam-gold focus:outline-none focus:ring-1 focus:ring-glam-gold transition-colors"
                                     placeholder="Your Name"
@@ -56,6 +85,7 @@ const Booking = ({ selectedService }) => {
                                     <Phone size={16} className="text-glam-gold" /> Phone
                                 </label>
                                 <input
+                                    value={phone} onChange={(e) => setPhone(e.target.value)}
                                     type="tel"
                                     className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:border-glam-gold focus:outline-none focus:ring-1 focus:ring-glam-gold transition-colors"
                                     placeholder="Phone Number"
@@ -88,6 +118,7 @@ const Booking = ({ selectedService }) => {
                                         <Calendar size={16} className="text-glam-gold" /> Date
                                     </label>
                                     <input
+                                        value={date} onChange={(e) => setDate(e.target.value)}
                                         type="date"
                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:border-glam-gold focus:outline-none focus:ring-1 focus:ring-glam-gold transition-colors [color-scheme:dark]"
                                     />
@@ -97,6 +128,7 @@ const Booking = ({ selectedService }) => {
                                         <Clock size={16} className="text-glam-gold" /> Time
                                     </label>
                                     <input
+                                        value={time} onChange={(e) => setTime(e.target.value)}
                                         type="time"
                                         className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:border-glam-gold focus:outline-none focus:ring-1 focus:ring-glam-gold transition-colors [color-scheme:dark]"
                                     />
@@ -109,6 +141,7 @@ const Booking = ({ selectedService }) => {
                                 <MessageSquare size={16} className="text-glam-gold" /> Special Request
                             </label>
                             <textarea
+                                value={request} onChange={(e) => setRequest(e.target.value)}
                                 rows="4"
                                 className="w-full bg-white/5 border border-white/10 rounded-sm p-3 text-white focus:border-glam-gold focus:outline-none focus:ring-1 focus:ring-glam-gold transition-colors resize-none"
                                 placeholder="Any specific preferences?"
@@ -116,7 +149,7 @@ const Booking = ({ selectedService }) => {
                         </div>
 
                         <div className="pt-4">
-                            <button className="w-full bg-glam-gold text-black font-bold uppercase tracking-[0.2em] py-4 hover:bg-white transition-all duration-300">
+                            <button type="submit" className="w-full bg-glam-gold text-black font-bold uppercase tracking-[0.2em] py-4 hover:bg-white transition-all duration-300">
                                 Confirm Booking
                             </button>
                         </div>

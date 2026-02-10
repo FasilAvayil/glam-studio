@@ -4,19 +4,16 @@ const services = [
     {
         title: 'Hair Cut & Styling',
         description: 'Expert cuts and styling tailored to your face shape and personality.',
-        price: 'From ₹50',
         image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2669&auto=format&fit=crop',
     },
     {
         title: 'Premium Makeup',
         description: 'Flawless makeup application for weddings, parties, and events.',
-        price: 'From ₹80',
         image: 'https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=2670&auto=format&fit=crop',
     },
     {
         title: 'Luxury Spa',
         description: 'Rejuvenating facials and massages to relax your mind and body.',
-        price: 'From ₹120',
         image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2670&auto=format&fit=crop',
     },
 ];
@@ -62,8 +59,7 @@ const Services = ({ onBookNow }) => {
                                 <p className="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     {service.description}
                                 </p>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-glam-gold font-bold">{service.price}</span>
+                                <div className="flex justify-end items-center">
                                     <button
                                         onClick={() => onBookNow(service.title)}
                                         className="text-white text-sm uppercase tracking-wider border-b border-glam-gold pb-1 hover:text-glam-gold transition-colors"

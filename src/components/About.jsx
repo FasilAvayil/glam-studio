@@ -22,7 +22,8 @@ const About = () => {
                     >
                         <div className="aspect-[4/5] rounded-2xl overflow-hidden relative z-10 border border-white/10">
                             <img
-                                src="https://images.unsplash.com/photo-1593526612327-0479f646e3cb?q=80&w=2670&auto=format&fit=crop"
+                                // src="https://images.unsplash.com/photo-1593526612327-0479f646e3cb?q=80&w=2670&auto=format&fit=crop"
+                                src="assets/images/kid-getting-haircut-front-view.jpg"
                                 alt="Child getting a haircut"
                                 className="w-full h-full object-cover"
                             />
